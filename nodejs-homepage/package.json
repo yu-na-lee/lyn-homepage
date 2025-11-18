@@ -1,0 +1,18 @@
+{
+  "name": "nodejs-homepage",
+  "version": "1.0.0",
+  "description": "git init git add README.md git commit -m \"first commit\" git branch -M main git remote add origin git@github.com:jsryu7287/js-homepage.git git push -u origin main",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "build": "echo \"No build specified\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^5.1.0"
+  }
+}

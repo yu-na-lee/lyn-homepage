@@ -1,0 +1,64 @@
+
+<%- include('partials/header') %>
+
+<div class="container mt-5">
+  <h1 class="mb-4">제조 및 품질관리 시스템</h1>
+
+  <div class="accordion" id="qualityAccordion">
+    <div class="card">
+      <div class="card-header" id="headingOne">
+        <h2 class="mb-0">
+          <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            생산 시설
+          </button>
+        </h2>
+      </div>
+      <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#qualityAccordion">
+        <div class="card-body">
+          <ul>
+            <li>아이스크림/제과 전용 공장</li>
+            <li>냉장/냉동 이중 저장 시스템</li>
+            <li>자동 충전 및 위생 충진 라인</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" id="headingTwo">
+        <h2 class="mb-0">
+          <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            품질 보증
+          </button>
+        </h2>
+      </div>
+      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#qualityAccordion">
+        <div class="card-body">
+          <ul>
+            <li>정기적 미생물 및 이물질 검사</li>
+            <li>원산지 및 유통기한 투명 공개</li>
+            <li>고객 피드백을 통한 품질 개선 루프</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" id="headingThree">
+        <h2 class="mb-0">
+          <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            연구 개발 (R&D)
+          </button>
+        </h2>
+      </div>
+      <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#qualityAccordion">
+        <div class="card-body">
+          <ul>
+            <li>월별 신제품 기획 및 시식 테스트</li>
+            <li>건강 간식 트렌드 반영한 개발</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('partials/footer') %>
