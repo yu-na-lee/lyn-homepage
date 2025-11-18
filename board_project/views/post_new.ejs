@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title><%= boardTitle %></title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; margin-bottom: 5px; font-weight: bold; }
+        .form-group input[type="text"], .form-group textarea {
+            width: 80%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .form-group textarea { height: 200px; }
+        .actions button { padding: 10px 20px; background-color: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        .actions button:hover { background-color: #0056b3; }
+        .actions a { margin-left: 10px; text-decoration: none; color: #666; }
+    </style>
+</head>
+<body>
+    <h1><%= boardTitle %></h1>
+    
+    <form action="/post" method="POST"> 
+        
+        <div class="form-group">
+            <label for="title">제목</label>
+            <input type="text" id="title" name="title" required>
+        </div>
+
+        <div class="form-group">
+            <label for="content">내용</label>
+            <textarea id="content" name="content" required></textarea>
+        </div>
+
+        <div class="actions">
+            <button type="submit">작성 완료</button>
+            <a href="/board/free">목록으로</a>
+        </div>
+    </form>
+</body>
+</html>

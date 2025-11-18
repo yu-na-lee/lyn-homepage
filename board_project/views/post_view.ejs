@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title><%= post.title %></title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .post-header { border-bottom: 2px solid #333; padding-bottom: 10px; margin-bottom: 20px; }
+        .post-info { font-size: 0.9em; color: #666; margin-top: 5px; }
+        .post-content { border: 1px solid #eee; padding: 15px; min-height: 200px; white-space: pre-wrap; }
+        .actions { margin-top: 20px; }
+        .actions a, .actions form { display: inline-block; margin-right: 10px; }
+        .actions a { text-decoration: none; padding: 8px 15px; border: 1px solid #ccc; border-radius: 4px; color: #333; }
+        .actions button { padding: 8px 15px; background-color: #dc3545; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        .actions button:hover { background-color: #c82333; }
+        .actions a:hover { background-color: #f8f9fa; }
+    </style>
+</head>
+<body>
+    <div class="post-header">
+        <h1><%= post.title %></h1>
+        <div class="post-info">
+            작성자: **<%= post.writer_name %>** | 
+            작성일: <%= post.created_at.toISOString().split('T')[0] %> | 
+            조회수: **<%= post.view_count %>** </div>
+    </div>
+
+    <div class="post-content">
+        <%= post.content %>
+    </div>
+
+    <div class="actions">
+        
+        <a href="/post/edit/<%= post.post_id %>">수정</a>
+
+        <form action="/post/delete/<%= post.post_id %>" method="POST" style="display:inline;">
+            <button type="submit" onclick="return confirm('정말로 이 게시물을 삭제하시겠습니까?');">삭제</button>
+        </form>
+        
+        <a href="/board/free">목록</a>
+    </div>
+</body>
+</html>
