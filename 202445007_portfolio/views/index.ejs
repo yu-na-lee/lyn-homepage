@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title><%= name %>의 포트폴리오</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div id="container"> 
+        
+        <h1><%= name %>의 포트폴리오</h1>
+        <p>안녕하세요^^</p>
+        
+        <h2>자기소개</h2>
+        <p><%= introduction %></p>
+        
+        <hr>
+        
+        <h2>주요 프로젝트 (<%= projects.length %>개)</h2>
+        <% if (projects.length > 0) { %>
+            <ul>
+                <% projects.forEach(project => { %>
+                    <li>
+                        <strong><%= project.title %></strong> (<%= project.period %>)
+                        <p><%= project.description %></p>
+                        <% if (project.project_link) { %>
+                            <p><a href="<%= project.project_link %>" target="_blank">프로젝트 링크</a></p>
+                        <% } %>
+                    </li>
+                <% }); %>
+            </ul>
+        <% } else { %>
+            <p>아직 등록된 프로젝트가 없습니다.</p>
+        <% } %>
+
+        <hr>
+        
+        <h2>기술 스택 (Skills)</h2>
+        <% 
+            // 카테고리별로 기술을 그룹화하는 로직
+            const groupedSkills = {};
+            skills.forEach(skill => {
+                const category = skill.category || '기타';
+                if (!groupedSkills[category]) {
+                    groupedSkills[category] = [];
+                }
+                groupedSkills[category].push(skill.skill_name);
+            });
+        %>
+
+        <% for (const category in groupedSkills) { %>
+            <h3><%= category %></h3>
+            <p>
+                <%= groupedSkills[category].join(', ') %>
+            </p>
+        <% } %>
+
+    </div> 
+    </body>
+</html>
